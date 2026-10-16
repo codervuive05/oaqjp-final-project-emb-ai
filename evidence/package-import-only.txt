@@ -1,0 +1,3 @@
+F:\FCoursera\LAB211\emotion-detection-submission\.venv\Scripts\python.exe -c "from EmotionDetection.emotion_detection import emotion_detector; print('Package import OK:', callable(emotion_detector))"
+
+Package import OK: True

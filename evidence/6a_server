@@ -1,0 +1,31 @@
+import requests
+from flask import Flask, render_template, request
+from EmotionDetection.emotion_detection import emotion_detector
+
+app = Flask(__name__)
+
+
+@app.route("/emotionDetector")
+def emotion_detector_route():
+    text = request.args.get("textToAnalyze", "")
+    try:
+        result = emotion_detector(text)
+    except (requests.RequestException, ValueError, KeyError, IndexError):
+        return "Emotion detection service is unavailable. Please try again.", 503
+
+    return (
+        f"For the given statement, the system response is "
+        f"'anger': {result['anger']}, 'disgust': {result['disgust']}, "
+        f"'fear': {result['fear']}, 'joy': {result['joy']}, "
+        f"and 'sadness': {result['sadness']}. "
+        f"The dominant emotion is {result['dominant_emotion']}."
+    )
+
+
+@app.route("/")
+def index():
+    return render_template("index.html")
+
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000)

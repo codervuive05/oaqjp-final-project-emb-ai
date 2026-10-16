@@ -1,8 +1,16 @@
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Emotion Detection - Dinh Minh</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="./static/mywebscript.js"></script>
     <style>
+        body { font: 18px/1.6 Arial, sans-serif; color: #202830; margin: 40px; }
+        .card { max-width: 1100px; margin: auto; border: 1px solid #ccc; padding: 24px; }
+        input { box-sizing: border-box; width: 100%; font: inherit; padding: 12px; }
+        button { background: #245d87; color: white; border: none; padding: 12px 24px; font: inherit; cursor: pointer; }
+        #system_response { background: #f5f7fa; min-height: 60px; }
         .center-heading {
             text-align: center;
         }
@@ -12,21 +20,22 @@
     <div class="card">
         <div class="card-body">
             <h1 class="center-heading">NLP - Emotion Detection</h1> 
+            <p>Dinh Minh</p>
             <div style="padding: 25px 25px 25px 25px;">
             <h2 class="mb-3">
-                <label class="form-label">Please enter the text to be analyzed</label>
-                <input type="textarea" class="form-control" id="textToAnalyze">
+                <label class="form-label" for="textToAnalyze">Please enter the text to be analyzed</label>
+                <input type="text" class="form-control" id="textToAnalyze">
             </h2>
 
             <div style="padding: 25px 25px 25px 25px;">
-                <button onclick="RunSentimentAnalysis()" class="btn btn-secondary">Run Sentiment Analysis</button>
+                <button onclick="RunSentimentAnalysis()" class="btn btn-secondary">Run Emotion Detection</button>
             </div>
             <div style="padding: 25px 25px 25px 25px;"></div>
             <h2 class="mb-3">
                 <label class="form-label">Result of Emotion Detection</label>
             </h2>
 
-            <div id="system_response" style="padding: 25px 25px 25px 25px;"></div>
+            <div id="system_response" aria-live="polite" style="padding: 25px 25px 25px 25px;"></div>
         </div>
     </div>
 </body>

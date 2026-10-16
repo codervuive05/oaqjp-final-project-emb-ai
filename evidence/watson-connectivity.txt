@@ -1,0 +1,4 @@
+curl.exe -sS --connect-timeout 8 --max-time 12 -X POST https://sn-watson-emotion.labs.skills.network/v1/watson.runtime.nlp.v1/NlpService/EmotionPredict -H "grpc-metadata-mm-model-id: emotion_aggregated-workflow_lang_en_stock" -H "Content-Type: application/json" --data-raw '{"raw_document":{"text":"I am very angry"}}'
+
+curl: (28) Connection timed out after 8007 milliseconds
+Exit status: 28

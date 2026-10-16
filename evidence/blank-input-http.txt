@@ -1,0 +1,4 @@
+F:\FCoursera\LAB211\emotion-detection-submission\.venv\Scripts\python.exe -c "from server import app; response = app.test_client().get('/emotionDetector?textToAnalyze='); print('HTTP', response.status_code); print(response.get_data(as_text=True))"
+
+HTTP 200
+Invalid text! Please try again!
